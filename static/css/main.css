@@ -1,0 +1,28 @@
+body {
+    margin: o;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+
+.round-corners{
+    border-color: #343a40;
+    border-radius: 5px;
+    border-width: 1;
+    border-style:double;
+    padding: 10px;
+    margin: 3px; 
+    margin-bottom: 10px;
+}
+
+#main_div{
+    margin: 2.5vh auto;
+    width: 60%;
+    height: 90vh;
+    border: 3px double #343a40;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.sub-divs {
+    margin: 5px;
+}

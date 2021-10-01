@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+
+
+{% block body %} 
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">IdentifyMe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+  </nav>
+
+<div id="main_div" class="">
+      <div class="col-12" >
+        <form method="POST" action="/upload" enctype="multipart/form-data" >
+            <p>
+                <input class = "center" type="file" name="file" autocomplete="off" accept="image/png, image/jpeg, image/jpg" required>
+                <input type="submit" value="Show Image" class="btn btn-outline-dark">
+            </p>
+        </form>
+        {% if img_data %}
+          <div class="ui card" style="height: 500px; width: 500px; text-align: center; margin: auto;">
+            <div class="image" style="height: 500px; width: 500px; margin: auto;">
+              <img src="{{ img_data }}" alt="Upload Image" style="display: block; margin: auto; height:100%; width: 100%;">
+            </div>
+          </div>
+        {% endif %}
+
+        {% if img_data %}
+        <form action="/result" style="margin: 50px auto;">
+          <p>
+              <input type="submit" value="Predict" class="btn btn-outline-dark btn-lg">
+          </p>
+        </form>
+        {% endif %}
+        
+        {% if prediction %}
+        <div class="card">
+          <div class="card-body">
+            <h1 style="color: #343a40">Is it a {{ prediction }} ?</h1>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    <!-- </div> -->
+  </div>
+
+
+{% endblock %}
