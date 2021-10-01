@@ -56,4 +56,4 @@ def upload_image():
         return redirect(request.url)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
